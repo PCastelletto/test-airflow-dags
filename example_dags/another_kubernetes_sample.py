@@ -2,6 +2,7 @@ import airflow
 from airflow.models import DAG
 from airflow.operators.bash_operator import BashOperator
 from airflow.contrib.operators import kubernetes_pod_operator
+from airflow.contrib.kubernetes import pod
 
 args = {
     'owner': 'Airflow',
