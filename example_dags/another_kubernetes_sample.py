@@ -18,7 +18,7 @@ dag = DAG(
 run_this = BashOperator(
     task_id='run_after_loop',
     bash_command='echo 1',
-    dag=dag,
+    dag=dag
 )
 
 kubernetes_full_pod = kubernetes_pod_operator.KubernetesPodOperator(
@@ -68,6 +68,7 @@ kubernetes_full_pod = kubernetes_pod_operator.KubernetesPodOperator(
     # Affinity determines which nodes the Pod can run on based on the
     # config. For more information see:
     # https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
-    affinity={})
+    affinity={},
+    dag=dag)
 
 run_this >> kubernetes_full_pod 
