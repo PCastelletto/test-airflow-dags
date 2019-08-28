@@ -11,8 +11,7 @@ args = {
 dag = DAG(
     dag_id='another_kube_op',
     default_args=args,
-    schedule_interval='0 0 * * *',
-    dagrun_timeout=timedelta(minutes=60),
+    schedule_interval='0 0 * * *'
 )
 
 run_this = BashOperator(
