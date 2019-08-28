@@ -54,10 +54,10 @@ kubernetes_full_pod = kubernetes_pod_operator.KubernetesPodOperator(
     annotations={'key1': 'value1'},
     # Resource specifications for Pod, this will allow you to set both cpu
     # and memory limits and requirements.
-    resources=pod.Resources(),
+    #resources=pod.Resources(),
     # Specifies path to kubernetes config. If no config is specified will
     # default to '~/.kube/config'. The config_file is templated.
-    config_file='/home/airflow/composer_kube_config',
+    #config_file='/home/airflow/composer_kube_config',
     # If true, the content of /airflow/xcom/return.json from container will
     # also be pushed to an XCom when the container ends.
     xcom_push=False,
