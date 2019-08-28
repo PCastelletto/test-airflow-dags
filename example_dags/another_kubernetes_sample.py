@@ -24,7 +24,7 @@ run_this = BashOperator(
 kubernetes_full_pod = kubernetes_pod_operator.KubernetesPodOperator(
     task_id='ex-all-configs',
     name='pi',
-    namespace='default',
+    namespace='Airflow',
     image='perl',
     # Entrypoint of the container, if not specified the Docker container's
     # entrypoint is used. The cmds parameter is templated.
@@ -62,13 +62,10 @@ kubernetes_full_pod = kubernetes_pod_operator.KubernetesPodOperator(
     # also be pushed to an XCom when the container ends.
     xcom_push=False,
     # List of Volume objects to pass to the Pod.
-    volumes=[],
     # List of VolumeMount objects to pass to the Pod.
-    volume_mounts=[],
     # Affinity determines which nodes the Pod can run on based on the
     # config. For more information see:
     # https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
-    affinity={},
     dag=dag)
 
 run_this >> kubernetes_full_pod 
