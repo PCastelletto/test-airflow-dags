@@ -24,7 +24,7 @@ run_this = BashOperator(
 kubernetes_full_pod = kubernetes_pod_operator.KubernetesPodOperator(
     task_id='ex-all-configs',
     name='pi',
-    namespace='Airflow',
+    namespace='airflow',
     image='perl',
     # Entrypoint of the container, if not specified the Docker container's
     # entrypoint is used. The cmds parameter is templated.
