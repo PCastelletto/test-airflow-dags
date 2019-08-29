@@ -61,6 +61,7 @@ kubernetes_full_pod = kubernetes_pod_operator.KubernetesPodOperator(
     # If true, the content of /airflow/xcom/return.json from container will
     # also be pushed to an XCom when the container ends.
     xcom_push=False,
+    in_cluster=True,
     # List of Volume objects to pass to the Pod.
     # List of VolumeMount objects to pass to the Pod.
     # Affinity determines which nodes the Pod can run on based on the
